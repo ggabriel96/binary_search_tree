@@ -9,11 +9,6 @@ class Tree {
         this.p = this.l = this.r = null;
     }
 
-    // static makes it belong to the class, not to an object
-    public static int max(int a, int b) {
-		return a < b ? a : b;
-	}
-
 	/* ~~~~~~~~~~~~~~~ Instance methods ~~~~~~~~~~~~~~~ */
     public void print() {
         System.out.println(this + ": " + this.l + " <- (" + this.k + ") -> " + this.r);
