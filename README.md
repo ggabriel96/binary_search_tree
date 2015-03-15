@@ -13,6 +13,8 @@ A naive implementation of the binary search tree in Java. Keep in mind that I'm 
 
 * The `size()` method returns the quantity of leafs in the (sub-)tree rooted at the object calling it.
 
-* And the `depth()` returns the length of the path from the object calling it to the root of the tree.
+* The `depth()` returns the length of the path from the object calling it to the root of the tree.
+
+* And the `height()` returns the length of the path from the object calling it to the farthest descendant/leaf.
 
 * Finally, the `add_old()` method is an older version of the current `add()`. It was used when I didn't have a `find()` method yet. It does the same thing, but the logic to find the right place is "built-in".
