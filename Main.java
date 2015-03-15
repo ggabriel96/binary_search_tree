@@ -17,6 +17,12 @@ class Main {
         System.out.println("root.r.r.depth: " + root.r.r.depth());
         System.out.println("root.l.r.depth: " + root.l.r.depth());
 
+        System.out.println("root.height: " + root.height());
+        System.out.println("root.l.height: " + root.l.height());
+        System.out.println("root.r.height: " + root.r.height());
+        System.out.println("root.r.r.height: " + root.r.r.height());
+        System.out.println("root.r.r.r.height: " + root.r.r.r.height());
+
         System.out.println("found " + root.find(0).k);
 
         System.out.println(root.size() + " node(s)");

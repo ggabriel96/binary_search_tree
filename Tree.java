@@ -51,6 +51,19 @@ class Tree {
 		else return 0;
 	}
 
+    public int height() {
+        if (this.l != null && this.r != null) {
+            return 1 + Math.max(this.l.height(), this.r.height());
+        }
+        else if (this.l != null) {
+            return 1 + this.l.height();
+        }
+        else if (this.r != null) {
+            return 1 + this.r.height();
+        }
+        else return 0;
+    }
+
     /* ~~~~~~~~~~~~~~~ Old methods ~~~~~~~~~~~~~~~ */
     public void add_old(Tree p, int k) {
         if (k < this.k) {
