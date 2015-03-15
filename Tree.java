@@ -17,38 +17,38 @@ class Tree {
     }
 
     public Tree find(int k) {
-		if (k < this.k && this.l != null) {
-			return this.l.find(k);
-		}
-		else if (k > this.k && this.r != null) {
-			return this.r.find(k);
-		} else {
-			return this;
-		}
-	}
+        if (k < this.k && this.l != null) {
+            return this.l.find(k);
+        }
+        else if (k > this.k && this.r != null) {
+            return this.r.find(k);
+        } else {
+            return this;
+        }
+    }
 
     public void add(int k) {
-		Tree q = this.find(k);
-		if (k < q.k) {
+        Tree q = this.find(k);
+        if (k < q.k) {
             q.l = new Tree(k);
             q.l.p = q;
         }
-		else if (k > q.k) {
+        else if (k > q.k) {
             q.r = new Tree(k);
             q.r.p = q;
         }
     }
 
     public int size() {
-		int size = 1;
-		if (this.r != null) size += this.r.size();
-		if (this.l != null) size += this.l.size();
-		return size;
+        int size = 1;
+        if (this.r != null) size += this.r.size();
+        if (this.l != null) size += this.l.size();
+        return size;
 	}
 
     public int depth() {
-		if (this.p != null) return 1 + this.p.depth();
-		else return 0;
+        if (this.p != null) return 1 + this.p.depth();
+        else return 0;
 	}
 
     public int height() {
