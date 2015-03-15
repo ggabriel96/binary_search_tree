@@ -44,12 +44,12 @@ class Tree {
         if (this.r != null) size += this.r.size();
         if (this.l != null) size += this.l.size();
         return size;
-	}
+    }
 
     public int depth() {
         if (this.p != null) return 1 + this.p.depth();
         else return 0;
-	}
+    }
 
     public int height() {
         if (this.l != null && this.r != null) {
