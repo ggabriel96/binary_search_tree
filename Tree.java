@@ -16,6 +16,12 @@ class Tree {
         if (this.r != null) this.r.print();
     }
 
+    public void inorderWalk() {
+        if (this.l != null) this.l.inorderWalk();
+        System.out.println("[" + this.k + "]");
+        if (this.r != null) this.r.inorderWalk();
+    }
+
     public Tree find(int k) {
         if (k < this.k && this.l != null) {
             return this.l.find(k);
