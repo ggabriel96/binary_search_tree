@@ -33,6 +33,11 @@ class Tree {
         }
     }
 
+    public int min() {
+        if (this.l != null) return this.l.min();
+        else return this.k;
+    }
+
     public void add(int k) {
         Tree q = this.find(k);
         if (k < q.k) {

@@ -22,6 +22,7 @@ class Main {
         System.out.println("root.r.r.r.height: " + root.r.r.r.height());
         System.out.println("found " + root.find(0).k);
         root.inorderWalk();
+        System.out.println("min: " + root.min());
         System.out.println("\n");
         /**********************************************************************/
         Tree root2 = new Tree(1);
@@ -38,5 +39,6 @@ class Main {
         System.out.println("root2.r.r.height: " + root2.r.r.height());
         System.out.println("found " + root2.find(7).k);
         root2.inorderWalk();
+        System.out.println("min: " + root2.min());
     }
 }
