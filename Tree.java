@@ -38,6 +38,11 @@ class Tree {
         else return this.k;
     }
 
+    public int max() {
+        if (this.r != null) return this.r.max();
+        else return this.k;
+    }
+
     public void add(int k) {
         Tree q = this.find(k);
         if (k < q.k) {

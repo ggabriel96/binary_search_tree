@@ -23,6 +23,7 @@ class Main {
         System.out.println("found " + root.find(0).k);
         root.inorderWalk();
         System.out.println("min: " + root.min());
+        System.out.println("max: " + root.max());
         System.out.println("\n");
         /**********************************************************************/
         Tree root2 = new Tree(1);
@@ -40,5 +41,6 @@ class Main {
         System.out.println("found " + root2.find(7).k);
         root2.inorderWalk();
         System.out.println("min: " + root2.min());
+        System.out.println("max: " + root2.max());
     }
 }
