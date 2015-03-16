@@ -2,14 +2,11 @@ class Tree {
     int k;
     Tree p, l, r;
 
-    /* ~~~~~~~~~~~~~~~ Class methods ~~~~~~~~~~~~~~~ */
-
     public Tree(int k) {
         this.k = k;
         this.p = this.l = this.r = null;
     }
 
-	/* ~~~~~~~~~~~~~~~ Instance methods ~~~~~~~~~~~~~~~ */
     public void print() {
         System.out.println(this + ": " + this.l + " <- (" + this.k + ") -> " + this.r);
         if (this.l != null) this.l.print();

@@ -3,18 +3,22 @@ A naive implementation of the binary search tree in Java. Keep in mind that I'm 
 
 **Some info:**
 
-* `p`, `l` and `r` are the parent, left and right leafs, respectively. `k` is the integer that leaf holds.
+* `p`, `l` and `r` are the parent, left and right nodes, respectively. `k` is the integer that node holds;
 
-* The `print()` method prints all the leafs in the (sub-)tree rooted at the object calling it - in a strange way.
+* The `print()` method prints all the nodes in the (sub-)tree rooted at the object calling it - in a weird way!;
 
-* The `find()` method searches for the leaf that contains the int passed as argument. If found, returns it. If not, returns the leaf that would be its parent if the searched leaf existed at that moment.
+* The `inorderWalk()` method prints all the nodes in ascending order;
 
-* The `add()` method uses `find()` to get to the place where the new leaf should be added. If a leaf already has that int passed as argument, it ignores it and doesn't add a thing (so there are no duplicates). If the new leaf is smaller than the current being looked at, it goes to the left; if it's greater, it goes to the right.
+* The `find()` method searches for the node that contains the int passed as argument. If found, returns it. If not, returns the node that would be its parent if the searched item existed at that moment;
 
-* The `size()` method returns the quantity of leafs in the (sub-)tree rooted at the object calling it.
+* The `min()` and `max()` methods return the minimum and maximum values being held in the tree rooted at the object calling it;
 
-* The `depth()` returns the length of the path from the object calling it to the root of the tree.
+* The `add()` method uses `find()` to get to the place where the new node should be added. If a node already has the int passed as argument, it ignores it and doesn't add a thing (so there are no duplicates). If the new node is smaller than the current being looked at, it goes to the left; if it's greater, it goes to the right;
 
-* And the `height()` returns the length of the path from the object calling it to the farthest descendant/leaf.
+* The `size()` method returns the quantity of nodes in the (sub-)tree rooted at the object calling it;
 
-* Finally, the `add_old()` method is an older version of the current `add()`. It was used when I didn't have a `find()` method yet. It does the same thing, but the logic to find the right place is "built-in".
+* The `depth()` returns the length of the path from the object calling it to the root of the tree;
+
+* And the `height()` returns the length of the path from the object calling it to the farthest descendant/leaf;
+
+* Finally, the `add_old()` method is an older version of the current `add()`. It was used when I didn't have a `find()` yet. It does the same thing, but the logic to find the right place is "built-in".
