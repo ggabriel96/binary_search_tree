@@ -57,6 +57,8 @@ class Tree {
         }
     }
 
+    // Throws NullPointerException if deleting root
+    // and one of its children is null
     public void remove() {
         if (this.l == null && this.r == null) {
             if (this == this.p.l) this.p.l = null;
