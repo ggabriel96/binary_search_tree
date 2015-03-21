@@ -30,14 +30,14 @@ class Tree {
         }
     }
 
-    public int min() {
+    public Tree min() {
         if (this.l != null) return this.l.min();
-        else return this.k;
+        else return this;
     }
 
-    public int max() {
+    public Tree max() {
         if (this.r != null) return this.r.max();
-        else return this.k;
+        else return this;
     }
 
     public void add(int k) {
