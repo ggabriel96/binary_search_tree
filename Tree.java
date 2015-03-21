@@ -7,15 +7,20 @@ class Tree {
         this.p = this.l = this.r = null;
     }
 
-    public void print() {
-        System.out.println(this + ": " + this.l + " <- (" + this.k + ") -> " + this.r);
-        if (this.l != null) this.l.print();
-        if (this.r != null) this.r.print();
-    }
-
     public void inorderWalk() {
         if (this.l != null) this.l.inorderWalk();
-        System.out.println("[" + this.k + "]");
+
+        { // actual printing
+            if (this.l != null) System.out.print(this.l.k);
+            else System.out.print("null");
+
+            if (this.p != null) System.out.print("\t<- " + this.k + " -> \t");
+            else System.out.print("\t<< " + this.k + " >> \t");
+
+            if (this.r != null) System.out.println(this.r.k);
+            else System.out.println("null");
+        }
+
         if (this.r != null) this.r.inorderWalk();
     }
 
@@ -49,6 +54,31 @@ class Tree {
         else if (k > q.k) {
             q.r = new Tree(k);
             q.r.p = q;
+        }
+    }
+
+    public void remove() {
+        if (this.l == null && this.r == null) {
+            if (this == this.p.l) this.p.l = null;
+            else this.p.r = null;
+            this.p = null;
+        }
+        else if (this.l != null && this.r == null) {
+            this.l.p = this.p;
+            if (this == this.p.l) this.p.l = this.l;
+            else this.p.r = this.l;
+            this.p = null;
+        }
+        else if (this.r != null && this.l == null) {
+            this.r.p = this.p;
+            if (this == this.p.l) this.p.l = this.r;
+            else this.p.r = this.r;
+            this.p = null;
+        }
+        else {
+            Tree s = this.successor();
+            this.k = s.k;
+            s.remove();
         }
     }
 
