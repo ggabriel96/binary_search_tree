@@ -9,24 +9,38 @@ class Main {
         root.add(6);
         root.add(7);
         root.add(10);
-        //root.print();
+        root.inorderWalk();
+        System.out.println();
+
         System.out.println("root.size: " + root.size() + " node(s)");
+
         System.out.println("root.depth: " + root.depth());
         System.out.println("root.r.depth: " + root.r.depth());
         System.out.println("root.r.r.depth: " + root.r.r.depth());
         System.out.println("root.l.r.depth: " + root.l.r.depth());
+
         System.out.println("root.height: " + root.height());
         System.out.println("root.l.height: " + root.l.height());
         System.out.println("root.r.height: " + root.r.height());
         System.out.println("root.r.r.height: " + root.r.r.height());
         System.out.println("root.r.r.r.height: " + root.r.r.r.height());
+
         System.out.println("found " + root.find(0).k);
-        root.inorderWalk();
+
         System.out.println("min: " + root.min().k);
         System.out.println("max: " + root.max().k);
         System.out.println("root.predecessor: " + root.predecessor().k);
         System.out.println("root.successor: " + root.successor().k);
-        System.out.println("\n");
+
+        root.l.remove();
+        System.out.println();
+        root.inorderWalk();
+
+        root.l.remove();
+        System.out.println();
+        root.inorderWalk();
+
+        System.out.println("_____________________________\n");
         /**********************************************************************/
         root = new Tree(1);
         root.add(2);
@@ -36,20 +50,34 @@ class Main {
         root.add(6);
         root.add(7);
         root.add(0);
+        root.inorderWalk();
+        System.out.println();
+
         System.out.println("root.size: " + root.size() + " node(s)");
+
         System.out.println("root.depth: " + root.depth());
         System.out.println("root.r.depth: " + root.r.depth());
         System.out.println("root.r.r.depth: " + root.r.r.depth());
+
         System.out.println("root.height: " + root.height());
         System.out.println("root.l.height: " + root.l.height());
         System.out.println("root.r.height: " + root.r.height());
         System.out.println("root.r.r.height: " + root.r.r.height());
         System.out.println("root.r.r.r.height: " + root.r.r.r.height());
+
         System.out.println("found " + root.find(0).k);
-        root.inorderWalk();
+
         System.out.println("min: " + root.min().k);
         System.out.println("max: " + root.max().k);
         System.out.println("root.predecessor: " + root.predecessor().k);
         System.out.println("root.successor: " + root.successor().k);
+
+        root.r.r.r.remove();
+        System.out.println();
+        root.inorderWalk();
+
+        System.out.println();
+        root.remove();
+        root.inorderWalk();
     }
 }
