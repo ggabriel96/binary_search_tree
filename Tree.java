@@ -52,6 +52,16 @@ class Tree {
         }
     }
 
+    public Tree predecessor() {
+        if (this.l != null) return this.l.max();
+        else return this;
+    }
+
+    public Tree successor() {
+        if (this.r != null) return this.r.min();
+        else return this;
+    }
+
     public int size() {
         int size = 1;
         if (this.r != null) size += this.r.size();

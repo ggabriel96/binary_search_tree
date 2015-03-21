@@ -24,6 +24,8 @@ class Main {
         root.inorderWalk();
         System.out.println("min: " + root.min().k);
         System.out.println("max: " + root.max().k);
+        System.out.println("root.predecessor: " + root.predecessor().k);
+        System.out.println("root.successor: " + root.successor().k);
         System.out.println("\n");
         /**********************************************************************/
         Tree root2 = new Tree(1);
@@ -42,5 +44,7 @@ class Main {
         root2.inorderWalk();
         System.out.println("min: " + root2.min().k);
         System.out.println("max: " + root2.max().k);
+        System.out.println("root2.predecessor: " + root2.predecessor().k);
+        System.out.println("root2.successor: " + root2.successor().k);
     }
 }
