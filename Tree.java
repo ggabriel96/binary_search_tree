@@ -57,33 +57,6 @@ class Tree {
         }
     }
 
-    // Throws NullPointerException if deleting root
-    // and one of its children is null
-    public void remove() {
-        if (this.l == null && this.r == null) {
-            if (this == this.p.l) this.p.l = null;
-            else this.p.r = null;
-            this.p = null;
-        }
-        else if (this.l != null && this.r == null) {
-            this.l.p = this.p;
-            if (this == this.p.l) this.p.l = this.l;
-            else this.p.r = this.l;
-            this.p = null;
-        }
-        else if (this.r != null && this.l == null) {
-            this.r.p = this.p;
-            if (this == this.p.l) this.p.l = this.r;
-            else this.p.r = this.r;
-            this.p = null;
-        }
-        else {
-            Tree s = this.successor();
-            this.k = s.k;
-            s.remove();
-        }
-    }
-
     public Tree predecessor() {
         if (this.l != null) return this.l.max();
         else return this;

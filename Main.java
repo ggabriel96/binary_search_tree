@@ -32,14 +32,6 @@ class Main {
         System.out.println("root.predecessor: " + root.predecessor().k);
         System.out.println("root.successor: " + root.successor().k);
 
-        root.l.remove();
-        System.out.println();
-        root.inorderWalk();
-
-        root.l.remove();
-        System.out.println();
-        root.inorderWalk();
-
         System.out.println("_____________________________\n");
         /**********************************************************************/
         root = new Tree(1);
@@ -71,13 +63,5 @@ class Main {
         System.out.println("max: " + root.max().k);
         System.out.println("root.predecessor: " + root.predecessor().k);
         System.out.println("root.successor: " + root.successor().k);
-
-        root.r.r.r.remove();
-        System.out.println();
-        root.inorderWalk();
-
-        System.out.println();
-        root.remove();
-        root.inorderWalk();
     }
 }
