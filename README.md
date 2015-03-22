@@ -26,3 +26,8 @@ An implementation of the binary search tree in Java. Keep in mind that I'm learn
 * Finally, the `add_old()` method is an older version of the current `add()`. It was used when I didn't have a `find()` yet. It does the same thing, but the logic to find the right place is "built-in".
 
 **Important:** some of this code is based on Cormen's Introduction to Algorithms and Open Data Structures code and content/info about trees. I'm really thankful for their effort on writing their books and this repository wouldn't have all these methods if it weren't for them.
+
+**Links:**
+
+* mitpress.mit.edu/books/introduction-algorithms
+* opendatastructures.org
