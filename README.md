@@ -9,9 +9,9 @@ An implementation of the binary search tree in Java. Keep in mind that I'm learn
 
 * The `add()` method uses `find()` to get to the place where the new node should be added. If a node already has the int passed as argument, it ignores it and doesn't add a thing (*so there are no duplicates*). If the new node is smaller than the current being looked at, it goes to the left; if it's greater, it goes to the right;
 
-* The `min()` and `max()` methods return the node that holds the minimum and maximum values of the tree rooted at the object calling it;
+* The `remove()` method uses `transplant()` (that performs a swap between nodes) to remove the node passed as argument from its tree. Treats all possible cases and if it has two children, it will be replaced by its successor;
 
-* The `remove()` method removes the node passed as argument from its tree. Treats all possible cases and if it has two children, it will be replaced by its successor;
+* The `min()` and `max()` methods return the node that holds the minimum and maximum values of the tree rooted at the object calling it;
 
 * The `predecessor()` and `sucessor()` methods return the predecessor (`max()` of its left child) and successor (`min()` of the right child) of the object calling it. If the respective child doesn't exist, returns itself;
 
