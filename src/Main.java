@@ -9,6 +9,7 @@ class Main {
         t.add(6);
         t.add(7);
         t.add(10);
+        System.out.println("Original tree:");
         t.inorderWalk();
         System.out.println();
 
@@ -32,6 +33,16 @@ class Main {
         System.out.println("t.root.predecessor: " + t.root.predecessor().k);
         System.out.println("t.root.successor: " + t.root.successor().k);
 
-        System.out.println("_____________________________\n");
+        while (true) {
+            System.out.println();
+            t.remove(t.root);
+            if (t.root != null) t.inorderWalk();
+            else break;
+        }
+
+        System.out.println(t.root);
+        System.out.println(t);
+
+        //System.out.println("_____________________________\n");
     }
 }

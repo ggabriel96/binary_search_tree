@@ -28,6 +28,29 @@ class Tree {
         }
     }
 
+    public void remove(Node u) {
+        if (u.l == null) this.transplant(u, u.r);
+        else if (u.r == null) this.transplant(u, u.l);
+        else {
+            Node v = u.successor();
+            if (v.p != u) {
+                this.transplant(v, v.r);
+                v.r = u.r;
+                v.r.p = v;
+            }
+            this.transplant(u, v);
+            v.l = u.l;
+            v.l.p = v;
+        }
+    }
+
+    private void transplant(Node u, Node v) {
+        if (u.p == null) this.root = v;
+        else if (u == u.p.l) u.p.l = v;
+        else u.p.r = v;
+        if (v != null) v.p = u.p;
+    }
+
     public Node min() {
         return this.root.min();
     }
