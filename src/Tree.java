@@ -81,7 +81,7 @@ class Tree {
     }
 
     public int depth() {
-        return this.root.depth();
+        return this.height();
     }
 
     public int height() {
