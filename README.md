@@ -5,13 +5,11 @@ An implementation of the binary search tree in Java. Keep in mind that I'm learn
 
 * `p`, `l` and `r` are the parent, left and right nodes, respectively. `k` is the integer that node holds;
 
-* The `inorderWalk()` method prints all the nodes in ascending order. Now that print() is gone (its existence was kinda redundant), I made it a little more verbose;
-
 * The `find()` method searches for the node that contains the int passed as argument. If found, returns it. If not, returns the node that would be its parent if the searched item existed at that moment;
 
-* The `min()` and `max()` methods return the node that holds the minimum and maximum values of the tree rooted at the object calling it;
+* The `add()` method uses `find()` to get to the place where the new node should be added. If a node already has the int passed as argument, it ignores it and doesn't add a thing (*so there are no duplicates*). If the new node is smaller than the current being looked at, it goes to the left; if it's greater, it goes to the right;
 
-* The `add()` method uses `find()` to get to the place where the new node should be added. If a node already has the int passed as argument, it ignores it and doesn't add a thing (so there are no duplicates). If the new node is smaller than the current being looked at, it goes to the left; if it's greater, it goes to the right;
+* The `min()` and `max()` methods return the node that holds the minimum and maximum values of the tree rooted at the object calling it;
 
 * ~~The `remove()` method removes the node calling it from its tree. Treats all possible cases and if it has two children, this will be replaced by its successor;~~
 
@@ -21,6 +19,8 @@ An implementation of the binary search tree in Java. Keep in mind that I'm learn
 
 * The `depth()` returns the length of the path from the object calling it to the root of the tree;
 
-* And the `height()` returns the length of the path from the object calling it to the farthest descendant/leaf;
+* The `height()` returns the length of the path from the object calling it to the farthest descendant/leaf;
+
+* And the `inorderWalk()` method prints all the nodes in ascending order. Now that print() is gone (its existence was kinda redundant), I made it a little more verbose;
 
 * Finally, the `add_old()` method is an older version of the current `add()`. It was used when I didn't have a `find()` yet. It does the same thing, but the logic to find the right place is "built-in".
