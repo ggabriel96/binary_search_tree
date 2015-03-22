@@ -17,7 +17,7 @@ An implementation of the binary search tree in Java. Keep in mind that I'm learn
 
 * The `size()` method returns the quantity of nodes in the (sub-)tree rooted at the object calling it;
 
-* The `depth()` returns the length of the path from the object calling it to the root of the tree;
+* The `depth()` returns the length of the path from the object calling it to the root of the tree. If called from a Tree object, will return the height of the tree, as it doesn't make sense to calculate the depth of the root and the total depth of the tree is equal to its height;
 
 * And the `height()` returns the length of the path from the object calling it to the farthest descendant/leaf;
 
