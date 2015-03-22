@@ -29,5 +29,5 @@ An implementation of the binary search tree in Java. Keep in mind that I'm learn
 
 **Links:**
 
-* mitpress.mit.edu/books/introduction-algorithms
-* opendatastructures.org
+* [Introduction to Algorithms, by Cormen et al](mitpress.mit.edu/books/introduction-algorithms)
+* [Open Data Structures](opendatastructures.org)
