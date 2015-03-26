@@ -46,16 +46,14 @@ class Tree {
     }
 
     public void remove(Node u) {
-        /*
-         * This first 'if' treats the case when the node has
-         * no children *or* has a right child but not left
+        /* This first 'if' treats the case when u has
+         * no children *or* has a right child, but not left.
          */
         if (u.l == null) this.transplant(u, u.r);
         else if (u.r == null) this.transplant(u, u.l);
         else {
             Node v = u.successor();
-            /*
-             * If u has two children, gotta transplant it
+            /* If u has two children, gotta transplant it
              * with its successor (v). If v is not a child
              * of u, makes v.r be the new child of v.p.
              * Then, v.r receives u's right sub-tree.
@@ -65,32 +63,28 @@ class Tree {
                 v.r = u.r;
                 v.r.p = v;
             }
-            /*
-             * Now, v has already taken u's place,
+            /* Now, v has already taken u's place,
              * except for the last step:
              */
             this.transplant(u, v);
             v.l = u.l;
             v.l.p = v;
-            /* transplant u and v so that
-             * we set the new parent of v (old u.p).
-             * Now, there is not a single reference
-             * to u and then it will be freed by the
-             * garbage collector (u.l and u.r are intact.
-             * That doesn't matter). If v is a child of
-             * u (the right one), then only the last step
-             * is performed: u.p receives v as its new
-             * child and u.l sub-tree becomes v.l sub-tree
-             * (v.l is null, since v is u's successor)
+            /* transplant u and v so that we set the
+             * new parent of v (old u.p). Now, there
+             * is not a single reference to u and then
+             * it will be freed by the garbage collector
+             * (u.l and u.r are intact. That doesn't matter).
+             * If v is a child of u (the right one), then
+             * only the last step is performed.
+             * Important: v.l is null, since v is u's successor.
              */
         }
     }
 
-    /*
-     * Adjusts v's references to match u's:
-     * u.p.x = v and v.p = u.p, if v is not null.
+    /* Adjusts v's references to match u's:
+     * u.p.x = v and v.p = u.p (if v is not null).
      * Doesn't touch u.p, u.l and u.r. u is
-     * still there as if nothing happened.
+     * still there as though nothing happened.
      */
     private void transplant(Node u, Node v) {
         if (u.p == null) this.root = v;
