@@ -20,7 +20,6 @@ class Tree {
 
     public Tree(int k) {
         this.root = new Node(k);
-        root.p = root.l = root.r = null;
     }
 
     public Node find(int k) {
