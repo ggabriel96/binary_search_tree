@@ -23,13 +23,7 @@ class Tree {
     }
 
     public Node find(int k) {
-        if (k < this.root.k && this.root.l != null) {
-            return this.root.l.find(k);
-        }
-        else if (k > this.root.k && this.root.l != null) {
-            return this.root.r.find(k);
-        }
-        else return this.root;
+        return this.root.find(k);
     }
 
     public void add(int k) {
