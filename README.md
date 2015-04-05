@@ -1,6 +1,13 @@
 # binary_search_tree
 An implementation of the binary search tree in Java. Keep in mind that I'm learning Java and Trees, so this may not be the best code around hehe.
 
+**Important:** some of this code is based on Cormen's Introduction to Algorithms and Open Data Structures code and content/info about trees. I'm really thankful for their effort on writing their books and this repository wouldn't have all these methods if it weren't for them.
+
+**Links:**
+
+* [Introduction to Algorithms, by Cormen et al](http://www.mitpress.mit.edu/books/introduction-algorithms)
+* [Open Data Structures](http://www.opendatastructures.org)
+
 **Some info:**
 
 * `p`, `l` and `r` are the parent, left and right nodes, respectively. `k` is the integer that node holds;
@@ -22,11 +29,3 @@ An implementation of the binary search tree in Java. Keep in mind that I'm learn
 * And the `height()` returns the length of the path from the object calling it to the farthest descendant/leaf;
 
 * Finally, the `inorderWalk()` method prints all the nodes in ascending order. Now that print() is gone (its existence was kinda redundant), I made it a little more verbose;
-
-
-**Important:** some of this code is based on Cormen's Introduction to Algorithms and Open Data Structures code and content/info about trees. I'm really thankful for their effort on writing their books and this repository wouldn't have all these methods if it weren't for them.
-
-**Links:**
-
-* [Introduction to Algorithms, by Cormen et al](http://www.mitpress.mit.edu/books/introduction-algorithms)
-* [Open Data Structures](http://www.opendatastructures.org)
