@@ -16,44 +16,44 @@
  */
 
 class Node {
-    int k;
-    Node p, l, r;
+    public int key;
+    public Node p, left, right;
 
-    public Node(int k) {
-        this.k = k;
-        this.p = this.l = this.r = null;
+    public Node(int key) {
+        this.key = key;
+        this.p = this.left = this.right = null;
     }
 
-    public Node find(int k) {
-        if (k < this.k && this.l != null) return this.l.find(k);
-        else if (k > this.k && this.r != null) return this.r.find(k);
+    public Node find(int key) {
+        if (key < this.key && this.left != null) return this.left.find(key);
+        else if (key > this.key && this.right != null) return this.right.find(key);
         else return this;
     }
 
     public Node min() {
-        if (this.l != null) return this.l.min();
+        if (this.left != null) return this.left.min();
         else return this;
     }
 
     public Node max() {
-        if (this.r != null) return this.r.max();
+        if (this.right != null) return this.right.max();
         else return this;
     }
 
     public Node predecessor() {
-        if (this.l != null) return this.l.max();
+        if (this.left != null) return this.left.max();
         else return this;
     }
 
     public Node successor() {
-        if (this.r != null) return this.r.min();
+        if (this.right != null) return this.right.min();
         else return this;
     }
 
     public int size() {
         int size = 1;
-        if (this.r != null) size += this.r.size();
-        if (this.l != null) size += this.l.size();
+        if (this.right != null) size += this.right.size();
+        if (this.left != null) size += this.left.size();
         return size;
     }
 
@@ -63,30 +63,30 @@ class Node {
     }
 
     public int height() {
-        if (this.l != null && this.r != null) {
-            return 1 + Math.max(this.l.height(), this.r.height());
+        if (this.left != null && this.right != null) {
+            return 1 + Math.max(this.left.height(), this.right.height());
         }
-        else if (this.l != null) {
-            return 1 + this.l.height();
+        else if (this.left != null) {
+            return 1 + this.left.height();
         }
-        else if (this.r != null) {
-            return 1 + this.r.height();
+        else if (this.right != null) {
+            return 1 + this.right.height();
         }
         else return 0;
     }
 
     public void inorderWalk() {
-        if (this.l != null) this.l.inorderWalk();
-        { // actual printing
-            if (this.l != null) System.out.print(this.l.k);
-            else System.out.print("null");
+        if (this.left != null) this.left.inorderWalk();
 
-            if (this.p != null) System.out.print("\t<- " + this.k + " -> \t");
-            else System.out.print("\t<< " + this.k + " >> \t");
+        if (this.left != null) System.out.print(this.left.key);
+        else System.out.print("null");
 
-            if (this.r != null) System.out.println(this.r.k);
-            else System.out.println("null");
-        }
-        if (this.r != null) this.r.inorderWalk();
+        if (this.p != null) System.out.print("\t<- " + this.key + " -> \t");
+        else System.out.print("\t<< " + this.key + " >> \t");
+
+        if (this.right != null) System.out.println(this.right.key);
+        else System.out.println("null");
+
+        if (this.right != null) this.right.inorderWalk();
     }
 }

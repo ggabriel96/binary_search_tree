@@ -16,73 +16,74 @@
  */
 
 class Tree {
-    Node root;
+    public Node root;
 
-    public Tree(int k) {
-        this.root = new Node(k);
+    public Tree(int key) {
+        this.root = new Node(key);
     }
 
-    public Node find(int k) {
-        return this.root.find(k);
+    public Node find(int key) {
+        return this.root.find(key);
     }
 
-    public void add(int k) {
-        Node n = this.root.find(k);
-        if (k < n.k) {
-            n.l = new Node(k);
-            n.l.p = n;
+    public void add(int key) {
+        Node n = this.find(key);
+        if (key < n.key) {
+            n.left = new Node(key);
+            n.left.p = n;
         }
-        else if (k > n.k) {
-            n.r = new Node(k);
-            n.r.p = n;
+        else if (key > n.key) {
+            n.right = new Node(key);
+            n.right.p = n;
         }
     }
 
-    public void remove(Node u) {
+    public void remove(int key) {
+        Node u = this.find(key);
         /* This first 'if' treats the case when u has
          * no children *or* has a right child, but not left.
          */
-        if (u.l == null) this.transplant(u, u.r);
-        else if (u.r == null) this.transplant(u, u.l);
+        if (u.left == null) this.transplant(u, u.right);
+        else if (u.right == null) this.transplant(u, u.left);
         else {
             Node v = u.successor();
             /* If u has two children, gotta transplant it
              * with its successor (v). If v is not a child
-             * of u, makes v.r be the new child of v.p.
-             * Then, v.r receives u's right sub-tree.
+             * of u, makes v.right be the new child of v.p.
+             * Then, v.right receives u's right sub-tree.
              */
             if (v.p != u) {
-                this.transplant(v, v.r);
-                v.r = u.r;
-                v.r.p = v;
+                this.transplant(v, v.right);
+                v.right = u.right;
+                v.right.p = v;
             }
             /* Now, v has already taken u's place,
              * except for the last step:
              */
             this.transplant(u, v);
-            v.l = u.l;
-            v.l.p = v;
+            v.left = u.left;
+            v.left.p = v;
             /* transplant u and v so that we set the
              * new parent of v (old u.p). Now, there
              * is not a single reference to u and then
              * it will be freed by the garbage collector
-             * (u.l and u.r are intact. That doesn't matter).
+             * (u.left and u.right are intact. That doesn't matter).
              * If v is a child of u (the right one), then
              * only the last step is performed.
-             * Important: v.l is null, since v is u's successor.
+             * Important: v.left is null, since v is u's successor.
              */
         }
     }
 
     /* Adjusts v's references to match u's:
      * u.p.x = v and v.p = u.p (if v is not null).
-     * Doesn't touch u.p, u.l and u.r. u is
+     * Doesn't touch u.p, u.left and u.right. u is
      * still there as though nothing happened.
      */
     private void transplant(Node u, Node v) {
         if (u.p == null) this.root = v;
-        else if (u == u.p.l) u.p.l = v;
-        else u.p.r = v;
+        else if (u == u.p.left) u.p.left = v;
+        else u.p.right = v;
         if (v != null) v.p = u.p;
     }
 

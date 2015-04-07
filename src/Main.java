@@ -33,26 +33,26 @@ class Main {
         System.out.println("t.size: " + t.size() + " node(s)");
 
         System.out.println("t.depth: " + t.depth());
-        System.out.println("t.root.r.depth: " + t.root.r.depth());
-        System.out.println("t.root.r.r.depth: " + t.root.r.r.depth());
-        System.out.println("t.root.l.r.depth: " + t.root.l.r.depth());
+        System.out.println("t.root.right.depth: " + t.root.right.depth());
+        System.out.println("t.root.right.right.depth: " + t.root.right.right.depth());
+        System.out.println("t.root.left.right.depth: " + t.root.left.right.depth());
 
         System.out.println("t.height: " + t.height());
-        System.out.println("t.root.l.height: " + t.root.l.height());
-        System.out.println("t.root.r.height: " + t.root.r.height());
-        System.out.println("t.root.r.r.height: " + t.root.r.r.height());
-        System.out.println("t.root.r.r.r.height: " + t.root.r.r.r.height());
+        System.out.println("t.root.left.height: " + t.root.left.height());
+        System.out.println("t.root.right.height: " + t.root.right.height());
+        System.out.println("t.root.right.right.height: " + t.root.right.right.height());
+        System.out.println("t.root.right.right.right.height: " + t.root.right.right.right.height());
 
-        System.out.println("found " + t.find(0).k);
+        System.out.println("found " + t.find(0).key);
 
-        System.out.println("min: " + t.min().k);
-        System.out.println("max: " + t.max().k);
-        System.out.println("t.root.predecessor: " + t.root.predecessor().k);
-        System.out.println("t.root.successor: " + t.root.successor().k);
+        System.out.println("min: " + t.min().key);
+        System.out.println("max: " + t.max().key);
+        System.out.println("t.root.predecessor: " + t.root.predecessor().key);
+        System.out.println("t.root.successor: " + t.root.successor().key);
 
          while (true) {
             System.out.println();
-            t.remove(t.root);
+            t.remove(t.root.key);
             if (t.root != null) t.inorderWalk();
             else break;
         }
