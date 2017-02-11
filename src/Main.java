@@ -1,18 +1,13 @@
-/*
+/**
  * This file is part of binary_search_tree.
  *
- *  binary_search_tree is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU Affero General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
+ * I dedicate any and all copyright interest in this software to the
+ * public domain. I make this dedication for the benefit of the public at
+ * large and to the detriment of my heirs and successors. I intend this
+ * dedication to be an overt act of relinquishment in perpetuity of all
+ * present and future rights to this software under copyright law.
  *
- *  binary_search_tree is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- *  GNU Affero General Public License for more details.
- *
- *  You should have received a copy of the GNU Affero General Public License
- *  along with binary_search_tree. If not, see <http://www.gnu.org/licenses/>.
+ * For more information, please refer to <http://unlicense.org/>
  */
 
 class Main {
